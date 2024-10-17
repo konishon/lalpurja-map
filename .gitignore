@@ -1,0 +1,43 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Environment variables
+.env
+
+# Local environment
+.vscode/
+*.env
+.venv/
+venv/
+env/
+cache/
+
+# Streamlit cache files
+.streamlit/
+*/st.cache/
+*/st.cache_data/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# pyenv
+.python-version
+
+# macOS
+*.DS_Store
+
+# Ignore virtual environments
+env/
+venv/
