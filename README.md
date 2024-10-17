@@ -1,8 +1,8 @@
 
 # Amenity Finder App
 
-> Access the Tool
-> You can access the tool online at https://lalpurja.streamlit.app/
+> **Access the Tool**
+> You can access the tool online at https://lalpurja.streamlit.app/ and https://land.nishon.com.np
 
 ## Overview
 
