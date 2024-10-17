@@ -15,6 +15,9 @@ The **Amenity Finder App** helps users explore amenities (e.g., hospitals, schoo
 - **Custom Markers**: Different amenity types have distinct colored markers.
 - **Results Tab**: View detailed information about the nearest amenities.
 
+![image](https://github.com/user-attachments/assets/563df873-e394-48db-bfe5-e4559435aa15)
+
+
 ## Installation
 
 1. Clone the repository:
