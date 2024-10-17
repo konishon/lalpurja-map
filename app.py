@@ -10,7 +10,7 @@ import requests
 
 st.set_page_config(layout="wide", page_title="Amenity Finder")
 
-st.title("Amenity Finder")
+st.title("Amenity Finder 🏡")
 
 if 'latitude_input' not in st.session_state:
     st.session_state['latitude_input'] = 27.7172
@@ -191,11 +191,12 @@ with tab1:
     else:
         gdf_amenities = None
 
-    G = fetch_graph((latitude, longitude), radius)
-    orig_node = ox.distance.nearest_nodes(G, X=longitude, Y=latitude)
+    with st.spinner("Generating map..."):  # Loader for map generation
+        G = fetch_graph((latitude, longitude), radius)
+        orig_node = ox.distance.nearest_nodes(G, X=longitude, Y=latitude)
 
-    m, facility_df = create_map(latitude, longitude, radius, gdf_amenities, G, orig_node)
-    map_data = st_folium(m, width=None, height=650)
+        m, facility_df = create_map(latitude, longitude, radius, gdf_amenities, G, orig_node)
+        map_data = st_folium(m, width=None, height=650)
 
 # Table tab
 with tab2:
