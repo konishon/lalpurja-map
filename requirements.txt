@@ -1,0 +1,12 @@
+streamlit
+osmnx
+geopandas
+pandas
+networkx
+shapely
+folium
+streamlit-folium
+scikit-learn
+scipy
+numpy
+scikit-learn
