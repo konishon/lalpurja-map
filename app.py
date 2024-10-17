@@ -20,7 +20,6 @@ if 'longitude_input' not in st.session_state:
 property_list_url = "https://backend.lalpurjanepal.com.np/properties/all-properties/"
 property_detail_url_template = "https://backend.lalpurjanepal.com.np/properties/properties/{}"
 
-# Section for fetching property list
 @st.cache_data
 def fetch_property_list():
     with st.spinner("Fetching property list..."):
@@ -69,12 +68,11 @@ else:
     st.error("No properties available.")
     latitude, longitude = 27.7172, 85.3240  # Default location if no properties
 
-# Add a sidebar section for radius selection with a divider
+
 st.sidebar.markdown("---")
 st.sidebar.header("📍 Search Radius")
 radius = st.sidebar.slider("Adjust Radius (meters)", min_value=500, max_value=2000, value=1000, step=100, key="radius_slider")
 
-# Functions for fetching and generating map
 @st.cache_data
 def fetch_graph(place_point, radius):
     """Fetch the walking network graph around the given point."""
@@ -86,7 +84,7 @@ def fetch_amenities(place_point, radius, selected_amenities):
     tags = {'amenity': selected_amenities}
     return ox.features_from_point(place_point, tags=tags, dist=radius)
 
-# Function for calculating routes
+
 def calculate_route(graph, orig_node, dest_point):
     if isinstance(dest_point, Polygon):
         dest_point = dest_point.centroid
@@ -141,6 +139,7 @@ def generate_facility_insights_and_add_routes(m, point, gdf, graph, orig_node, r
                 radius=6,  # Size of the circle
                 color=marker_colors.get(amenity_type, 'blue'),
                 fill=True,
+                tooltip=amenity_type,
                 fill_color=marker_colors.get(amenity_type, 'blue'),
                 fill_opacity=0.7,
                 popup=folium.Popup(f"{amenity_type.capitalize()}", parse_html=True)
