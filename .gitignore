@@ -41,3 +41,8 @@ Thumbs.db
 # Ignore virtual environments
 env/
 venv/
+
+
+*.geojson
+*.gpkg
+*.shp
